@@ -1,0 +1,78 @@
+	<script type="text/javascript">
+		var CLOSED = false;
+		
+		if ((CLOSED) && (getQueryString("u") != "jonb")) location.href="closed.html";
+        
+	</script>
+	<div class='mastheadContainer'>
+		<div class='masthead'>
+			<div class='mitem mbtn1' data-page='sites.php'>Sites</div>
+			<div class='mitem mbtn2' data-page='customers.php'>Customers</div>
+			<div class='mitem mbtn3' data-page='boats.php'>Boats</div>
+			<div class='mitem mbtn4' data-page='engines.php'>Engines</div>
+			<div class='mitem mbtn5' data-page='jobsheets.php?s=0&o=0&b=0'>Job Sheets</div> 
+			<div class='mitem mbtn6' data-page='admin.php'>Admin</div>
+            <div style='float:left;font-size:2.5em;color:red;padding-left:20px;' id='devtest'>&nbsp;</div>
+			<div style='float:right;margin:0 15px 0 15px'>
+				<div id="user" style="margin:0;padding:0;text-align:right;"></div>
+				<div id='Date'>&nbsp;</div>
+			</div>
+		</div>
+	</div>
+	<div id='pageHeader'>
+		<div id='pageTitleLeft'>&nbsp;</div>
+		<div id='pageTitleRight'>&nbsp;</div>
+        <br class='clear' />
+	</div>
+
+	<div id='pageContainer'>
+		<noscript>
+		  <b style='color:red;'>It appears that Javascript is disabled in your browser, As a result this site will be unable to function correctly.</b>
+        </noscript>
+		<div style='width:120px;margin:0 auto;padding-top:50px;'><img src='images/DrivelineLogoAndName.jpg'></div>
+	</div>
+
+	<div class='footer' style='width:100%;margin-top:10px;border-top:thick solid #A0A0A0;'>
+		<div class="footerLeft" id="version">
+			Version 1.5.5
+		</div>	
+		<div class="footerRight">
+			<a href="index.php">Driveline Marine Services</a> &copy; jonb 2016<br>
+			<span id="lastpagemod">&nbsp;</span>
+		</div>
+	</div>
+
+<div id="dialog" title="Basic dialog">&nbsp;</div>
+
+<div id="loadingDiv" />
+
+<script type="text/javascript">
+	$(document).ready(function(){
+
+        $('.mitem').hover(
+            function() {
+                var bgcol = $(this).css('backgroundColor');
+                $(this).css({borderBottomColor: "'" + bgcol + "'", 
+                             borderBottomWidth:"11px", 
+                             borderBottomStyle:"solid"});
+            }, function() {
+                var bgcol = $(this).css('backgroundColor');
+                $(this).css({borderBottomColor: "'" + bgcol + "'", 
+                             borderBottomWidth:"thick", 
+                             borderBottomStyle:"solid"});
+            }
+        );
+
+        $('.mitem').click(function() {
+            if ($.cookie("user")) {
+                location.href=$(this).attr('data-page');
+            } else {
+                showLogin($(this).attr('data-page'));
+            }
+        });
+
+        if (window.location.hostname.indexOf("45y") >= 0) {
+            $('#devtest').html("*** DevTest ***");
+        }
+    });
+</script>

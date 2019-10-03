@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html">
+  <title>DLM - Jobsheet Photos</title>
+  <meta name="author" content="JonB - based on work by Jake Rocheleau">
+  <link rel="stylesheet" type="text/css" media="all" href="css/galleryStyles.css">
+  <link rel="stylesheet" type="text/css" media="all" href="css/jquery.lightbox-0.5.css">
+  <script type="text/javascript" src="js/generalUtils.js"></script>    
+  <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery.lightbox-0.5.min.js"></script>
+</head>
+
+<body>
+  <div id="topbar"><a href="jobsheets.php?s=0&o=0&b=0">Back to Jobsheets</a></div>
+  
+  <div id="w">
+    <div id="content">
+      <h1 id="hdg">Photos</h1>
+      
+      <div id="thumbnails">
+          Gallery Here
+      </div>
+    </div>
+  </div>
+<script type="text/javascript">
+    var parent = getQueryString('p');
+    var parentId = getQueryString('id');
+    $('#hdg').html("Photos for " + parent + " " + parentId);
+    $.post("dlmFunctionDispatch.php?f=getPhotoList&parent=" + parent + "&parentId=" + parentId, function(data) {
+        if (data.resultcount == 0) {
+            alert("No photos recorded.");
+			location.href = "jobsheets.php?s=0&o=0&b=0";
+        } else {
+            var boat = safeDecode(data.name);
+            var title = "";
+            var gmap = "";
+            $('#hdg').html("Photos for " + boat + " (" + parent + " " + parentId + ")");
+            var list = "<ul>";
+            for (var i = 0; i < data.resultcount; i++) {
+                if (data.results[i].latlon == "") {
+                    gmap = " (Photo has no location data)";
+                } else {
+                    gmap = "<a href=\"https://www.google.co.uk/maps/place/" + data.results[i].latlon + "\" target=_blank> (Map)</a>";
+                }
+                title = "Jobsheet #" + parentId + " for " + boat + " " + data.results[i].timestamp + gmap;
+                list += "<li>";
+                list += "<a href='" + data.results[i].image + "' title='" + title + "'>";
+                list += "<img src='" + data.results[i].image + "' width='150px'></a>";
+                list += "</li>";
+            }
+            list += "</ul>";
+            $('#thumbnails').html(list);
+            $('#thumbnails a').lightBox();
+        }
+    }, "json");
+</script>
+</body>
+</html>

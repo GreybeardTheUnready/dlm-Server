@@ -1,0 +1,194 @@
+/* Site Specific CSS */
+
+.mySelect {
+    height:30px;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+.mastheadContainer {
+	width:100%;
+/*	background-color: #F0F0F0;*/
+	border-top: solid thin #666666;
+	vertical-align:middle;
+}
+.masthead {
+    max-width:1200px;
+	height:60px; 
+	margin:0 auto;
+    padding-top: 20px;
+}
+.mitem {
+	min-height:40px;
+	width:100px;
+    border-radius: 6px;
+    margin:2px;
+	text-align:center;
+    font-size: 1.2em;
+    font-weight: 600;
+    color:#dddddd;
+	line-height:40px;
+	float:left;
+}
+
+.mblank {
+	min-height:30px;
+	width:10px;
+	float:left;
+}
+
+#pageHeader {
+    max-width: 1200px;
+    margin:0 auto;
+    
+}
+
+#pageTitleLeft {
+    width:40%;
+    float:left;
+    margin:0 0 10px 15px;
+    font-size: 1.5em;
+}
+
+#pageTitleRight {
+    width:40%;
+    float:right;
+    text-align:right;
+    margin:0 10px 10px 0;
+    font-size: 1.5em;
+}
+
+#pageContainer {
+    max-width: 1200px;
+    margin:0 auto;
+}
+
+.mbtn1 {
+    border: 5px solid #333333;
+    background-color: #666666;
+    color:#FFFFFF;
+}
+.mbtn2 {
+    border: 5px solid #603c95;
+    background-color: #7E45D3;
+    color:#FFFFFF;
+}
+.mbtn3 {
+    border: 5px solid #6388b1;
+    background-color: #6D9DD1;
+    color:#FFFFFF;
+}
+.mbtn4 {
+    border: 5px solid #d3d341;
+    background-color: #E7E737;
+    color:#444444;
+}
+.mbtn5 {
+    border: 5px solid #d05c22;
+    background-color: #F76C27;
+    color:#FFFFFF;
+}
+.mbtn6 {
+    border: 5px solid #ce4040;
+    background-color: #E73F3F;
+    color:#FFFFFF;
+}
+
+.siElement {
+    margin:0px;
+    padding:2px 4px 2px 4px;
+    float:left;
+    border:thin solid #dbdbdb;
+    text-align:right;
+    min-height: 1em;
+    background-color: #e3e3e3;
+}
+.siDelMod { 
+    width:20px;
+    margin:0px;
+    float:left;
+    visibility:hidden;
+}
+.siQty, .emQty {
+    margin:0px !important;
+    padding:0px !important;
+    width:100px !important;
+    float:right !important;
+    text-align:right !important;
+    min-height: 1em !important;
+}
+
+.emName, .emMake, .emPartno {
+    margin:0px !important;
+    padding:0px 5px 0px 0px!important;
+    width:123px !important;
+    float:left !important;
+    text-align:right !important;
+    min-height: 1em !important;
+}
+
+.scrTblHead, .scrTblBody {
+    display: block;
+    border: 1px solid black;
+}
+.scrTblBody.scrollable {
+    height: 125px;
+    /* Just for the demo          */
+    overflow-y: auto;
+    /* Trigger vertical scroll    */
+    width: 100px;
+}
+
+.priceCol {
+    width:70px;
+    text-align: right;
+}
+
+#invoiceFooter {
+    position:absolute;
+    text-align:center;
+    bottom:0;
+    left:0;
+    width:100%;
+/*    background-color:#F0F0F0; */
+    color:#333333;
+}
+
+#moreNotes {
+    width:100%;
+    border:1px solid #d3d3d3;
+    display: none;
+    padding : 5px;    
+}
+.addPartField {
+    height:19px;
+    margin:0px;
+    padding:0px;
+}
+.jsPart{
+    height:19px !important;
+    margin:0px;
+    padding:0px;
+    text-align:right;
+}
+
+/*
+.container {
+    width:100%;
+    border:1px solid #d3d3d3;
+}
+.container div {
+    width:100%;
+}
+.container .header {
+    background-color:#d3d3d3;
+    padding: 2px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.container .content {
+    display: none;
+    padding : 5px;
+}*/

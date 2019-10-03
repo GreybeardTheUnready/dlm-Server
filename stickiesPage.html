@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en-gb">
+<head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+<meta content="jonb" name="author">
+<title>Driveline Marine - Tsaff Site</title>
+<!--
+<link href="css/stickyLabels-L7162.css" rel="stylesheet" type="text/css">
+-->
+<link href="css/stickyLabels-J8160.css" rel="stylesheet" type="text/css">
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
+<script src="js/generalUtils.js" type="text/javascript"></script>
+</head>
+
+<body >
+	<div class="sticker" id="qr0">&nbsp;</div>
+	<div class="sticker" id="qr1">&nbsp;</div>
+	<div class="sticker" id="qr2">&nbsp;</div>
+	<div class="break">&nbsp;</div>
+	<div class="sticker" id="qr3">&nbsp;</div>
+	<div class="sticker" id="qr4">&nbsp;</div>
+	<div class="sticker" id="qr5">&nbsp;</div>
+	<div class="break">&nbsp;</div>
+	<div class="sticker" id="qr6">&nbsp;</div>
+	<div class="sticker" id="qr7">&nbsp;</div>
+	<div class="sticker" id="qr8">&nbsp;</div>
+	<div class="break">&nbsp;</div>
+	<div class="sticker" id="qr9">&nbsp;</div>
+	<div class="sticker" id="qr10">&nbsp;</div>
+	<div class="sticker" id="qr11">&nbsp;</div>
+	<div class="break">&nbsp;</div>
+	<div class="sticker" id="qr12">&nbsp;</div>
+	<div class="sticker" id="qr13">&nbsp;</div>
+	<div class="sticker" id="qr14">&nbsp;</div>
+	<div class="break">&nbsp;</div>
+	<div class="sticker" id="qr15">&nbsp;</div>
+	<div class="sticker" id="qr16">&nbsp;</div>
+	<div class="sticker" id="qr17">&nbsp;</div>
+	<div class="break">&nbsp;</div>
+	<div class="sticker" id="qr18">&nbsp;</div>
+	<div class="sticker" id="qr19">&nbsp;</div>
+	<div class="sticker" id="qr20">&nbsp;</div>
+
+<script type="text/javascript">
+    var targetDiv;
+    var boats = getQueryString('boats');
+    if (boats) {
+        var boatsArray = boats.split('~');
+        for (var i=0; i<boatsArray.length-1; i++) {
+            boatsData = boatsArray[i].split("|");
+            targetDiv = "#qr"+i;
+			$(targetDiv).qrcode({width: 75,height: 75, text: boatsData[0]+"|"+boatsData[1] });
+            $(targetDiv).append('<br><span style="font-size:1.5em;font-weight:bold;">'+boatsData[1]+'</span><br>Driveline Marine Ltd');
+        }
+    } else {
+        alert("Nothing to Encode");
+    }
+
+</script>
+</body>
+</html>
