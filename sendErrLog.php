@@ -1,5 +1,5 @@
 <?php
-// EMail error log
+// Email error log 
 require_once ("generalUtils.php");
 
 $ErrorLog = "";
